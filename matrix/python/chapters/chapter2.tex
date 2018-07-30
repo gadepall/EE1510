@@ -1,0 +1,199 @@
+Verify your results through Python, wherever possible.
+
+\subsection{Eigenvalues and Eigenvectors}
+For any square matrix $\mbf{G}$, if
+%
+\begin{equation}
+\mbf{G}\mbf{x} = \lambda \mbf{x},
+\end{equation}
+%
+$\lambda$ is known as the {\em eigenvalue} and $\mbf{x}$ is the corresponding {\em eigenvector}.
+
+Let
+%
+\begin{equation}
+\mbf{G} = \begin{pmatrix}
+1 & 1\\-2 & 4
+\end{pmatrix}
+\end{equation}
+\begin{problem}
+Show that the eigenvalues of $\mbf{G}$ are obtained by solving the equation
+%
+\begin{equation}
+\label{char_equation}
+f\brak{\lambda}=\abs{\lambda \mbf{I}- G} = 0
+\end{equation}
+%
+\end{problem}
+Note that \eqref{char_equation} is known as the {\em characteristic equation}.  $f\brak{\lambda}$ is known as the characteristic polynomial.
+
+\begin{problem}
+	Obtain the eigenvalues and eigenvectors of $\mbf{G}$.
+\end{problem}
+\begin{problem}
+	Find $f(\mbf{G})$.  This is known as the {\em Cayley-Hamilton Theorem}.
+\end{problem}
+
+
+\begin{problem}
+	Stack the eigenvalues of $\mbf{G}$ in a diagonal matrix $\mbf{\Lambda}$ and the corresponding eigenvectors in a matrix $\mbf{F}$.  Find $\mbf{F}\mbf{\Lambda}\mbf{F}^{-1}$.  This is known as {\em Eigenvalue Decomposition}
+\end{problem}
+%
+
+\subsection{Symmetric Matrices}
+Let 
+%
+\begin{equation}
+\mbf{C} = \begin{pmatrix}
+37 & 9 \\9 & 13
+\end{pmatrix}
+\end{equation}
+%
+Note that $\mbf{C} = \mbf{C}^T$.  Such matrices are known as {\em symmetric matrices}.
+
+\begin{problem}
+Find $\mbf{P}$ such that  $\mbf{C} = \mbf{P}\mbf{D}\mbf{P}^{-1}$, where $\mbf{D}$ is a diagonal matrix.  
+\end{problem}
+
+\begin{problem}
+	Find $\mbf{P}\mbf{P}^T$ and $\mbf{P}^T\mbf{P}$.  $\mbf{P}$ is known as an {\em orthogonal matrix}.
+\end{problem}
+Let
+\begin{equation}
+\mbf{B} =
+\begin{pmatrix}
+4 & 11 & 14
+\\
+8 & 7 & -2
+\end{pmatrix}
+\end{equation}
+%
+\begin{problem}
+Find $\mbf{B}^T\mbf{B}$ and $\mbf{B}\mbf{B}^T$
+\end{problem}
+
+Note that $\mbf{C} = \frac{1}{9}\brak{\mbf{B}\mbf{B}^T}$.  
+
+\begin{problem}
+	Obtain the eigenvalues and eigenvectors of $\mbf{B}^T\mbf{B}$
+\end{problem}
+%
+\begin{problem}
+	Verify eigenvalue decomposition and Cayley-Hamilton theorem for $\mbf{B}^T\mbf{B}$.
+\end{problem}
+
+\subsection{Orthogonality}
+Let $\mbf{v}_1,\mbf{v}_2$ be the columns of $\mbf{C}$.
+
+\begin{problem}
+	Obtain $\mbf{u}_1,\mbf{u}_2$ from $\mbf{v}_1,\mbf{v}_2$ through the following equations. 
+	%
+\begin{align}
+\mbf{u}_1&= \frac{\mbf{v}_1}{\norm{\mbf{v}_1}}
+\\
+\hat{\mbf{u}}_2 &= \mbf{v}_2 - \brak{\mbf{v}_2,\mbf{u}_1}\mbf{u}_1
+\\
+\mbf{u}_2 &= \frac{\hat{\mbf{u}}_2}{\norm{\hat{\mbf{u}}_2}}
+\end{align}
+	%
+	This procedure is known as Gram-Schmidt orthogonalization.
+\end{problem}
+
+\begin{problem}
+Stack the vectors $\mbf{u}_1,\mbf{u}_2$ in columns to obtain the matrix $\mbf{Q}$.  Show that $\mbf{Q}$ is orthogonal.  
+\end{problem}
+
+\begin{problem}
+	From the Gram=Schmidt process, show that $\mbf{C}=\mbf{Q}\mbf{R}$, where $\mbf{R}$ is an upper triangular matrix.  This is known as the $\mbf{Q}-\mbf{R}$ decomposition.  
+\end{problem}
+
+
+\subsection{Singular Value Decomposition}
+
+\begin{problem}
+	Find an orthonormal basis for $\mbf{B}^T\mbf{B}$ comprising of the eigenvectors.  Stack these orthonormal eigenvectors in a matrix $\mbf{V}$. This is known as {\em Orthogonal Diagonalization}.  
+\end{problem}
+\begin{problem}
+	Find the singular values of $\mbf{B}^T\mbf{B}$.  The singular values are obtained by taking the square roots of its eigenvalues.  
+\end{problem}
+\begin{problem}
+	Stack the singular values of $\mbf{B}^T\mbf{B}$ diagonally to obtain a matrix $\mbf{\Sigma}$.
+\end{problem}
+
+\begin{problem}
+	Obtain the matrix $\mbf{B}\mbf{V}$.  Verify if the columns of this matrix are orthogonal.
+\end{problem}
+
+\begin{problem}
+	Extend the columns of $\mbf{B}\mbf{V}$ if necessary, to obtain an orthogonal matrix $\mbf{U}$.
+\end{problem}
+
+\begin{problem}
+	Find $\mbf{U}\mbf{\Sigma}\mbf{V}^T$.  Comment.
+\end{problem}
+
+\subsection{Quadratic Forms}
+
+%\begin{problem}
+%	Type the following in Python and interpret the output.  $\theta = \mbf{x}^T\mbf{C}\mbf{x}$ is known as the {\em Quadratic Form} for $\mbf{C}$. $\theta$ is defined for a {\em Symmetric Matrix}.
+%	\begin{verbatim}
+%	%Code written by GVV Sharma April 10, 2016
+%	%Released under GNU GPL.  Free to use for anything.
+%	
+%	%This program plots the quadratic form for a range of
+%	%vectors x in the mesh with vertices (-10,-10),(-10,10),(10,-10)
+%	%%and (10,10)
+%	
+%	%The result is a 3-D mesh.  
+%	%The quadratic form in terms of the eigenvalues of the
+%	%symmetric matrix is explored through this program.
+%	
+%	
+%	clear;
+%	close;
+%	
+%	C = [37 9; 9 13];
+%	[P lambda] = eig(C);
+%	
+%	x1 = linspace(-10,10,50); %generating points in x-axis
+%	x2 = linspace(-10,10,50);  %generating points in y-axis
+%	
+%	[xx, yy] = meshgrid(x1,x2);
+%	
+%	ffun = @(x,y) [x y]*C*[x;y];
+%	
+%	f = arrayfun(ffun,xx,yy);
+%	
+%	mesh(xx,yy,f)
+%	
+%	[M I] = min(f(:)); %vectorize the 50 x 50 matrix f, find min
+%	%M = min value , I is the index of the f_min
+%	
+%	[I_r I_c] = ind2sub(size(f),I); %Get the row, col index of f_min
+%	
+%	%The minimum value of the quadratic form
+%	M
+%	%Verifying the eigenvalue relation
+%	x_hat = [xx(I_r,I_c);  yy(I_r,I_c)]
+%	x_hat'*C*x_hat
+%	z = P*[xx(I_r,I_c);  yy(I_r,I_c)]
+%	z'*lambda*z
+%	
+%	\end{verbatim}
+%\end{problem}
+
+\begin{problem}
+$\theta = \mbf{x}^T\mbf{C}\mbf{x}$ is known as the {\em Quadratic Form} for $\mbf{C}$. $\theta$ is defined for a {\em Symmetric Matrix}.	A matrix for which the quadratic form is always positive is known as a {\em positive definite} matrix.  Is $\mbf{C}$  positive definite?
+\end{problem}
+\begin{problem}
+	Find out the relation between positive definiteness and the eigenvalues of a symmetric matrix.
+\end{problem}
+
+\begin{problem}
+	Find the minimum and maximum values of $\theta =\mbf{x}^T\mbf{C}\mbf{x}$, if $\norm{\mbf{x}} =1$.  
+\end{problem}
+
+%\begin{problem}
+%	Assuming that the eigenvectors in $\mbf{P}$ are stacked in decreasing order of the eigenvalues, verify if the first column of $\mbf{P}$ yields a maximum for $\theta$.
+%\end{problem}
+%\vspace{2cm}

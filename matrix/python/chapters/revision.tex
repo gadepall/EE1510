@@ -1,0 +1,141 @@
+%\subsection{Orthogonal Modulation}
+
+%Consider the matrix equation
+%
+%\begin{equation}
+%\label{ls_simple}
+%\mbf{r}_i = \mathbf{H}\mbf}_i %+\mbf{n}
+%\end{equation}
+%
+\begin{problem}
+Let 
+%
+\begin{equation}
+r = \sum_{j=1}^{2}h_{j}c_j 
+\end{equation}
+%
+Express the above as a matrix  equation. Note that $r$ is a scalar.
+\end{problem}
+\begin{problem}
+Let
+%
+\begin{equation}
+r_i = \sum_{j=1}^{2}h_{ij}c_j, \quad i = 1,2.
+\end{equation}
+%
+Express the above as the matrix equation
+%
+\begin{equation}
+\label{two}
+\mbf{r} = \mbf{H}\mbf{c}
+\end{equation}
+%
+List the entries of each matrix/vector in \eqref{two}.
+	\end{problem}
+	\begin{problem}
+If
+%
+\begin{equation}
+r_i = \sum_{j=1}^{N}h_{ij}c_j, \quad i = 1,2 \dots M,
+\end{equation}
+%
+what is the dimension of the matrix $\mbf{H}$ in the matrix equation? 
+\end{problem}
+\begin{problem}
+Let
+%
+\begin{equation}
+\mbf{r}^t = \mbf{h}^t\mbf{C}
+\end{equation}
+%
+where $\mbf{r}$ is $L\times 1$ vector and  $C$ is an $N \times L$ matrix.  Find the least squares estimate for $\mbf{h}$. What is the size of $\mbf{h}$?
+\end{problem}
+\begin{problem}
+Now consider the matrix equation
+%
+\begin{equation}
+\mbf{R} = \mbf{H}\mbf{C} 
+\end{equation}
+%
+where $\mbf{R}$ is $M\times L$, $\mbf{H}$ is $M \times N$ and $\mbf{C}$ is $N \times L$.  Find the least squares estimate of $\mbf{H}$.
+\end{problem}
+\begin{problem}
+Let
+%
+\begin{equation}
+D = x_1^2 - x_2^2
+\end{equation}
+$D$ can be expressed in quadratic form as $D = \mbf{x}^{t}Q\mbf{x}$, where
+$\mbf{x} = \brak{x_1,x_2}^{t}$.  Find $Q$.
+\end{problem}
+\begin{problem}
+Find the determinant and eigenvalues of 
+%
+\begin{equation}
+\mbf{A}=\begin{pmatrix}
+1 & 2 \\
+3 & 2
+\end{pmatrix}
+\end{equation}
+%
+\end{problem}
+\begin{problem}
+Find the determinant and eigenvalues of $\mbf{A} \otimes \mbf{I}$, where $\mbf{I}$ is the $2\times 2$ identity matrix.  Comment.
+%
+\end{problem}
+\begin{problem}
+Find the eigenvalues of $I-kA$, without explicitly calculating them. $k$ is a constant.
+\end{problem}
+Consider the matrix
+%
+\begin{equation}
+\mbf{S} = 
+\begin{pmatrix}
+s_1 & s_2 \\
+-s_2^{*} & s_1^{*}
+\end{pmatrix}
+%
+\end{equation} 
+%
+where $*$ represents the conjugate of a scalar and conjugate transpose of a vector.
+\begin{problem}
+Find $SS^{*}$.  Comment.
+\end{problem}
+\begin{problem}
+Express
+%
+\begin{equation}
+\label{alamouti}
+\begin{split}
+r_1 &= h_1s_1+h_2s_2 \\
+r_2 &= -h_1s_2^{*}+h_2s_1^{*} \\
+\end{split}
+\end{equation}
+%
+as a matrix equation.
+\end{problem}
+\begin{problem}
+Solve for  $s_1$ and $s_2$ in \eqref{alamouti} using matrices.
+\end{problem}
+
+{\em The problems in this chapter were framed using \cite{parul} and \cite{alamouti}}.  The primary reference for this manual is \cite{davidlay}.
+
+
+
+
+
+%\begin{center}
+% \scalebox{1}{%
+%\normalsize
+%\parbox{6.57292in}{%
+%\includegraphics[scale=0.7]{quiz1_prob1.eps} \\
+% translate x=960 y=544 scale 0.38
+%\putbox{3.0in}{2.5in}{1.20}{$V$}%
+%} % close 'parbox'
+%} % close 'scalebox'
+%\vspace{-\baselineskip} % this is not necessary, but looks better
+%\end{center}
+%
+
+
+
